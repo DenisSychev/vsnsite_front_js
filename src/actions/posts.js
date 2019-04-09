@@ -8,7 +8,7 @@ export const loadFailed = createAction('[Posts] Load fail');
 //отправляет данные на сервер (побочный эффект)
 export const loadPosts = (dispatch, pageNumber) => {
     dispatch(loadStarted());
-    fetch(`https://vsnsite-service.herokuapp.com/api/publications`) //http://jsonplaceholder.typicode.com/posts?_limit=3&_page=${pageNumber}
+    fetch(`https://vsnsite-service.herokuapp.com/api/publications`)
         .then((response) => response.json())
         .then((posts) => {
             dispatch(loadCompleted(posts));

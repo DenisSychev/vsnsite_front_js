@@ -1,4 +1,4 @@
-import PostsList from 'containers/PostsContainer';
+import PostsList from 'containers/PostListContainer';
 import Post from 'containers/PostContainer';
 import Home from 'components/Home';
 
@@ -14,7 +14,7 @@ export default [
         component: PostsList
     },
     {
-        path: '/posts/:id',
+        path: '/posts/:_id',
         exact: true,
         component: Post
     }

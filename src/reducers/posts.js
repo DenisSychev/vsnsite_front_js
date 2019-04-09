@@ -2,11 +2,11 @@ import { handleActions } from 'redux-actions';
 
 import { loadStarted, loadCompleted, loadFailed } from 'actions/posts';
 
+//дефолтное значение 
 const initialState = {
     loading: false,
     error: null,
     article: [],
-    page: 1
 };
 
 export default handleActions({
@@ -22,7 +22,6 @@ export default handleActions({
             ...state,
             article: state.article.concat(action.payload),
             loading: false,
-            page: state.page + 1,
         };
     },
     [loadFailed]: (state, action) => {

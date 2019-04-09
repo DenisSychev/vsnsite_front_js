@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react';
+import React, { PureComponent, Fragment } from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { Provider } from 'react-redux';
@@ -11,7 +11,7 @@ import Footer from 'components/Footer';
 import routes from './routes';
 import store from './store';
 
-class Container extends Component {
+class Container extends PureComponent {
     render() {
         return (
             <Fragment>

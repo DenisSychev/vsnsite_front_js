@@ -1,25 +1,25 @@
-import React, {PureComponent, Fragment} from 'react';
-import {connect} from 'react-redux';
+import React, { PureComponent, Fragment } from 'react';
+import { connect } from 'react-redux';
 
 import PostsList from 'components/PostsList';
-import {loadPosts} from 'actions/posts';
+import { loadPosts } from 'actions/posts';
 
-class PostsContainer extends PureComponent {
+class PostListContainer extends PureComponent {
 
     componentDidMount() {
-        const {load, posts} = this.props;
+        const { load, posts } = this.props;
         if (!posts.length) {
             load();
         }
     };
 
     handleLoadMore = () => {
-        const {load} = this.props;
+        const { load } = this.props;
         load();
     };
 
     render() {
-        const {loading, posts} = this.props;
+        const { loading, posts } = this.props;
         return (
             <Fragment>
                 <div className="content container">
@@ -27,7 +27,7 @@ class PostsContainer extends PureComponent {
                 </div>
             </Fragment>
         );
-    }    
+    }
 }
 
 //возвращает объект (папка reducers/соответствующий файл)
@@ -36,7 +36,6 @@ function mapStateToProps(state, props) {
         ...props,
         loading: state.posts.loading,
         posts: state.posts.article,
-        page: state.posts.page,
     };
 }
 
@@ -56,5 +55,5 @@ function mergeMap(stateProps, dispatchProps, ownProps) {
     }
 }
 
-//передаёт полученные данные из store в функцию PostsContainer в этом файле 
-export default connect(mapStateToProps, mapDispatchToProps, mergeMap)(PostsContainer);
+//передаёт полученные данные из store в функцию PostListContainer в этом файле 
+export default connect(mapStateToProps, mapDispatchToProps, mergeMap)(PostListContainer);

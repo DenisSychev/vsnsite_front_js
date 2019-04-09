@@ -8,7 +8,7 @@ export default class PostsList extends PureComponent {
         return (
             <Fragment>
                 {posts.map(post =>
-                    <div className="post container" key={post._id}>
+                    <div className="post container" key={post._id}>                        
                         <h1><Link to={`/posts/${post._id}`}>{post.title}</Link></h1>
                         <p className="author">Автор {post.userid}</p>
                         <p>Картинка по адресу {post.substrate.img}</p>
