@@ -1,12 +1,11 @@
 import { createAction } from 'redux-actions';
 
-//действия
+//действия - применяются в reducers
 export const loadStarted = createAction('[Posts] Load start');
 export const loadCompleted = createAction('[Posts] Load complete');
 export const loadFailed = createAction('[Posts] Load fail');
 
-//отправляет данные на сервер (побочный эффект)
-export const loadPosts = (dispatch, pageNumber) => {
+export const loadPosts = (dispatch) => {
     dispatch(loadStarted());
     fetch(`https://vsnsite-service.herokuapp.com/api/publications`)
         .then((response) => response.json())
