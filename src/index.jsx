@@ -29,4 +29,4 @@ class Container extends PureComponent {
     }
 };
 
-ReactDOM.render(<Provider store={store}><Container /></Provider>, document.getElementById('container'));
+ReactDOM.render(<Provider store={store}><Container /></Provider>, document.getElementById('app'));
