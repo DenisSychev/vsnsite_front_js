@@ -4,11 +4,11 @@ import './Footer.sass';
 export default class Footer extends PureComponent {
     render() {
         return (
-            <div className="footer">
+            <footer className="footer">
                 <div className="footer-block container">
                     <p>{(new Date().getFullYear())}</p>
                 </div>
-            </div>
+            </footer>
         );
     }
 };
